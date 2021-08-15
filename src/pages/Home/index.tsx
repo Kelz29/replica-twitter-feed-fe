@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import _ from "lodash";
 import { StyledContainer } from "./styles";
 import axios from "axios";
-import { API_URL_DEV } from "../../constants";
+import { API_URL_DEPLOYED } from "../../constants";
 import { mockTweets } from "../../mock-data";
 
 const HomePage = () => {
@@ -11,7 +11,7 @@ const HomePage = () => {
   const [apiTweets, setApiTweets] = useState([]);
   useEffect(() => {
     const getTweets = async () => {
-      const res = await axios.get(`${API_URL_DEV}`);
+      const res = await axios.get(`${API_URL_DEPLOYED}`);
       setApiTweets(res.data);
     };
     getTweets();
